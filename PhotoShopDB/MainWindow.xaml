@@ -11,7 +11,8 @@
         Width="800" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="CanMinimize"
-        Background="#FFF">
+        Background="#FFF"
+        Icon="Images/LogoWhite8.png">
     
     <Grid>
         <Grid.Background>

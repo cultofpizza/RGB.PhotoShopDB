@@ -9,8 +9,8 @@
         Height="540" Width="700"
         MinHeight="540" MinWidth="630"
         Background="#FFF"
-        WindowStartupLocation="CenterScreen">
-
+        WindowStartupLocation="CenterScreen"
+        Icon="Images/LogoWhite8.png">
 
     <Grid>
         <Grid.Background>
@@ -19,19 +19,31 @@
                 <GradientStop Color="#090979" Offset="0"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Border Height="480"
-                VerticalAlignment="Top"
+        <Border Margin="0 0 0 40"
+                VerticalAlignment="Stretch"
                 CornerRadius="0 0 80 0"
                 Background="#020024"/>
-        <StackPanel Orientation="Vertical"
-                    Width="600"
-                    VerticalAlignment="Stretch"
-                    HorizontalAlignment="Stretch">
-            <Grid Background="#FFF"
-                  Margin="0 30 0 0"
-                  Width="600"
-                  Height="360">
-                <ListView x:Name="Clients">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="1" Grid.Row="1"
+                  Background="#FFF"
+                  MinWidth="600"
+                  MinHeight="360">
+                <ListView x:Name="Clients" Background="#FFF" Grid.Column="1" Grid.Row="1"
+                  MinWidth="600"
+                  MinHeight="360">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id_client}"/>
@@ -45,22 +57,19 @@
                 </ListView>
             </Grid>
 
-            <Grid Margin="0 20 0 0">
+            <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="44"/>
-                </Grid.RowDefinitions>
                 <Button FontSize="14" Grid.Column="0" Content="Add" Click="Add_Click" Height="44" Style="{StaticResource LoginAsCustomerButton}" HorizontalAlignment="Stretch"/>
                 <Button FontSize="14" Grid.Column="1" Content="Edit" Click="Edit_Click" Height="44" Style="{StaticResource LoginAsCustomerButton}" HorizontalAlignment="Stretch"/>
                 <Button FontSize="14" Grid.Column="2" Content="Delete" Click="Delete_Click" Height="44" Style="{StaticResource LoginAsCustomerButton}" HorizontalAlignment="Stretch"/>
                 <Button FontSize="14" Grid.Column="3" Content="Update" Click="Update_Click" Height="44" Style="{StaticResource LoginAsCustomerButton}" HorizontalAlignment="Stretch"/>
-
             </Grid>
-        </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>

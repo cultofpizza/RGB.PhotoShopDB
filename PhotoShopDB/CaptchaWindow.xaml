@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoShopDB"
         mc:Ignorable="d"
-        Title="RGB Captcha" Height="400" Width="300"
-        WindowStartupLocation="CenterScreen">
+        Title="RGB Captcha"
+        Height="400"
+        Width="300"
+        WindowStartupLocation="CenterScreen"
+        Icon="Images/LogoWhite8.png">
     <Grid>
         <StackPanel Margin="15">
             <TextBlock x:Name="CaptchaText"
@@ -14,9 +17,7 @@
                        Padding="7.5"
                        HorizontalAlignment="Center"/>
             <Image x:Name="bitmapCaptcha"
-                   Margin="10">
-                
-            </Image>
+                   Margin="10" Height="150" />
             <TextBox x:Name="CaptchaBox"
                      Margin="7.5"
                      Padding="7.5"
@@ -26,7 +27,10 @@
                     Content="Refresh"
                     Margin="7.5"
                     Padding="5"
-                    Click="Button_Click" Foreground="#000" Background="#FFF" BorderBrush="#AAA"/>
+                    Click="Button_Click"
+                    Foreground="#000"
+                    Background="#FFF"
+                    BorderBrush="#AAA"/>
         </StackPanel>
     </Grid>
 </Window>

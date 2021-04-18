@@ -24,7 +24,6 @@ namespace PhotoShopDB
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void LogIn(object sender, RoutedEventArgs e)
@@ -42,21 +41,14 @@ namespace PhotoShopDB
             {
                 MessageBox.Show("Неверный логин и/или пароль\nПроверьте правильность введенных данных", "Ошибка входа", MessageBoxButton.OK);
             }
-
         }
+
         bool Verify()
         {
             Entities abc = new Entities();
             var login = abc.Employee.Where(i => i.login == Login.Text && i.password == Password.Password).ToList();
-            if (login.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
 
+            return login.Count > 0;
         }
 
         private void Password_KeyDown(object sender, KeyEventArgs e)
