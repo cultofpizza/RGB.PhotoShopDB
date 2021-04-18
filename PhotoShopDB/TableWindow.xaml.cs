@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Reflection;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Windows.Shapes;//ya syel deda
+using System.Windows.Shapes;
 using static PhotoShopDB.Entities;
 
 namespace PhotoShopDB
@@ -32,12 +32,7 @@ namespace PhotoShopDB
                 .GetProperties()
                 .Where(p => p.PropertyType.Name == "DbSet`1")
                 .ToList();
-            //listOfTables = listOfTables.Take(listOfTables.Count() - 1);
-
-            //var a = (DbSet<Client>)listOfTables[0].GetValue(abc, new object[0]);
-            //listOfTables.ForEach(dbset => TableSelector.Items.Add(dbset.Name));
             DbSet<Client> table = abc.Client;
-            //var tables = listOfTables.Cast<>().ToList();
             Clients.ItemsSource = table.ToList();
         }
 

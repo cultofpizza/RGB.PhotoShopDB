@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoShopDB"
         mc:Ignorable="d"
-        Title="Employees"
+        Title="Clients"
         Height="540" Width="700"
         MinHeight="540" MinWidth="630"
         Background="#FFF"
@@ -31,18 +31,18 @@
                   Margin="0 30 0 0"
                   Width="600"
                   Height="360">
-                <ListView x:Name="Employees">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id_client}"/>
-                        <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding Lname}"/>
-                        <GridViewColumn Header="Имя" Width="100"  DisplayMemberBinding="{Binding Fname}"/>
-                        <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Mname}"/>
-                        <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone_number}"/>
-                        <GridViewColumn Header="Почта" Width="140" DisplayMemberBinding="{Binding Email}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+                <ListView x:Name="Clients">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id_client}"/>
+                            <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding Lname}"/>
+                            <GridViewColumn Header="Имя" Width="100"  DisplayMemberBinding="{Binding Fname}"/>
+                            <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Mname}"/>
+                            <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone_number}"/>
+                            <GridViewColumn Header="Почта" Width="140" DisplayMemberBinding="{Binding Email}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </Grid>
 
             <Grid Margin="0 20 0 0">
@@ -63,46 +63,4 @@
             </Grid>
         </StackPanel>
     </Grid>
-    
-    <!--<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        --><!--#region КОЕ ЧТО--><!--
-        <ListView x:Name="Employees"
-            Grid.Row="2"
-                  Grid.Column="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id_client}"/>
-                    <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding Lname}"/>
-                    <GridViewColumn Header="Имя" Width="100"  DisplayMemberBinding="{Binding Fname}"/>
-                    <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Mname}"/>
-                    <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone_number}"/>
-                    <GridViewColumn Header="Почта" Width="140" DisplayMemberBinding="{Binding Email}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        --><!--#endregion--><!--
-        <StackPanel Grid.Row="3"
-                    Grid.Column="2"
-                    Orientation="Horizontal">
-            <Button Content="Add" Click="Add_Click" Height="44" Style="{StaticResource LogInButtonStyle1}" Margin="5"/>
-            <Button Content="Edit" Click="Edit_Click" Height="44" Style="{StaticResource LogInButtonStyle1}" Margin="5"/>
-            <Button Content="Delete" Click="Delete_Click" Height="44" Style="{StaticResource LogInButtonStyle1}" Margin="5"/>
-            <Button Content="Update" Click="Update_Click" Height="44" Style="{StaticResource LogInButtonStyle1}" Margin="5"/>
-
-        </StackPanel>
-    </Grid>-->
 </Window>
