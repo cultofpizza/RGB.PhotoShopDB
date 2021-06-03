@@ -3,30 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PhotoShopDB"
         mc:Ignorable="d"
-        Title="NewClient" Height="450" Width="400"
-        Background="#FF2B2BC5"
+        Title="NewClient" Height="650"  Width="800" MinHeight="450" MinWidth="300"
         WindowStartupLocation="CenterScreen">
-    <Grid >
-        <StackPanel Margin="20" Width="200">
-            <Label  Content="Фамилия" Style="{StaticResource niceLabel}"/>
-            <TextBox x:Name="lName"/>
+    <Window.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFilledTextBox}">
+            <Setter Property="materialDesign:HintAssist.Hint" Value="Enter login"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CaretBrush" Value="#FA9746"/>
+            <Setter Property="SelectionBrush" Value="#FA9746"/>
+            <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="White"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Margin" Value="0 5"/>
+        </Style>
+    </Window.Resources>
 
-            <Label  Content="Имя" Style="{StaticResource niceLabel}"/>
-            <TextBox x:Name="fName"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1, 0" EndPoint="0.9, 1">
+                <GradientStop Color="#00d4ff" Offset="1"/>
+                <GradientStop Color="#090979" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Margin="0 0 0 40"
+                VerticalAlignment="Stretch"
+                CornerRadius="0 0 80 0"
+                Background="#020024"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="60 20" Width="275" VerticalAlignment="Center">
+            <TextBox x:Name="lName" materialDesign:HintAssist.Hint="Фамилия"/>
 
-            <Label  Content="Отчество" Style="{StaticResource niceLabel}"/>
-            <TextBox x:Name="mName"/>
+            <TextBox x:Name="fName" materialDesign:HintAssist.Hint="Имя"/>
 
-            <Label  Content="Телефон" Style="{StaticResource niceLabel}"/>
-            <TextBox x:Name="phone"/>
+            <TextBox x:Name="mName" materialDesign:HintAssist.Hint="Отчество"/>
 
-            <Label  Content="Почта" Style="{StaticResource niceLabel}"/>
-            <TextBox x:Name="email"/>
+            <TextBox x:Name="phone" materialDesign:HintAssist.Hint="Телефон"/>
+
+            <TextBox x:Name="email" materialDesign:HintAssist.Hint="Почта"/>
 
             <Button x:Name="btnConfirm" Content="Confirm"
-                    Style="{StaticResource LogInButtonStyle1}"
+                    Style="{StaticResource LoginButton}"
                     Margin="0 20" Click="btnConfirm_Click"/>
         </StackPanel>
     </Grid>

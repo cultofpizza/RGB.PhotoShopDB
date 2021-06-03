@@ -4,81 +4,81 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PhotoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="PhotoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id_client" />
           </Key>
-          <Property Name="Id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Lname" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Fname" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Mname" Type="nvarchar" MaxLength="100" />
-          <Property Name="Phone_number" Type="nchar" MaxLength="12" />
-          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Id_client" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Lname" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Fname" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Mname" MaxLength="100" Type="nvarchar" />
+          <Property Name="Phone_number" MaxLength="12" Type="nchar" />
+          <Property Name="Email" MaxLength="100" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id_employee" />
           </Key>
-          <Property Name="Id_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Lname" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Fname" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Mname" Type="nvarchar" MaxLength="100" />
-          <Property Name="Birth_day" Type="datetime" Nullable="false" />
-          <Property Name="Id_position" Type="int" Nullable="false" />
-          <Property Name="Tel_number" Type="nchar" MaxLength="12" />
-          <Property Name="login" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="password" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Id_employee" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Lname" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Fname" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Mname" MaxLength="100" Type="nvarchar" />
+          <Property Name="Birth_day" Nullable="false" Type="datetime" />
+          <Property Name="Id_position" Nullable="false" Type="int" />
+          <Property Name="Tel_number" MaxLength="12" Type="nchar" />
+          <Property Name="login" Nullable="false" MaxLength="20" Type="nchar" />
+          <Property Name="password" Nullable="false" MaxLength="20" Type="nchar" />
         </EntityType>
         <EntityType Name="Material">
           <Key>
             <PropertyRef Name="Id_material" />
           </Key>
-          <Property Name="Id_material" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Material_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id_material" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Material_name" Nullable="false" MaxLength="100" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id_order" />
           </Key>
-          <Property Name="Id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_client" Type="int" Nullable="false" />
-          <Property Name="Id_employee" Type="int" Nullable="false" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Id_status" Type="int" Nullable="false" />
-          <Property Name="Note" Type="nvarchar" MaxLength="300" />
+          <Property Name="Id_order" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Id_client" Nullable="false" Type="int" />
+          <Property Name="Id_employee" Nullable="false" Type="int" />
+          <Property Name="Date" Nullable="false" Type="datetime" />
+          <Property Name="Id_status" Nullable="false" Type="int" />
+          <Property Name="Note" MaxLength="300" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Order_List">
           <Key>
             <PropertyRef Name="Id_order" />
             <PropertyRef Name="Id_service" />
           </Key>
-          <Property Name="Id_order" Type="int" Nullable="false" />
-          <Property Name="Id_service" Type="int" Nullable="false" />
-          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Id_order" Nullable="false" Type="int" />
+          <Property Name="Id_service" Nullable="false" Type="int" />
+          <Property Name="Amount" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Order_Status">
           <Key>
             <PropertyRef Name="Id_status" />
           </Key>
-          <Property Name="Id_status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="Id_status" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Status" MaxLength="100" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
             <PropertyRef Name="Id_position" />
           </Key>
-          <Property Name="Id_position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Position_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id_position" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Position_name" Nullable="false" MaxLength="100" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="Id_service" />
           </Key>
-          <Property Name="Id_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Service_name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="300" />
-          <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Id_service" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Service_name" Nullable="false" MaxLength="100" Type="nvarchar" />
+          <Property Name="Description" MaxLength="300" Type="nvarchar" />
+          <Property Name="Price" Nullable="false" Precision="10" Scale="2" Type="decimal" />
           <Property Name="Id_material" Type="int" />
           <Property Name="Material_amount" Type="int" />
         </EntityType>
@@ -86,15 +86,15 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Nullable="false" MaxLength="128" Type="nvarchar" />
+          <Property Name="principal_id" Nullable="false" Type="int" />
+          <Property Name="diagram_id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Employee_Position">
-          <End Role="Position" Type="Self.Position" Multiplicity="1" />
-          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <End Type="Self.Position" Multiplicity="1" Role="Position" />
+          <End Type="Self.Employee" Multiplicity="*" Role="Employee" />
           <ReferentialConstraint>
             <Principal Role="Position">
               <PropertyRef Name="Id_position" />
@@ -105,8 +105,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="Self.Client" Multiplicity="1" Role="Client" />
+          <End Type="Self.Order" Multiplicity="*" Role="Order" />
           <ReferentialConstraint>
             <Principal Role="Client">
               <PropertyRef Name="Id_client" />
@@ -117,8 +117,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="Self.Employee" Multiplicity="1" Role="Employee" />
+          <End Type="Self.Order" Multiplicity="*" Role="Order" />
           <ReferentialConstraint>
             <Principal Role="Employee">
               <PropertyRef Name="Id_employee" />
@@ -129,8 +129,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_List_Order">
-          <End Role="Order" Type="Self.Order" Multiplicity="1" />
-          <End Role="Order_List" Type="Self.Order_List" Multiplicity="*" />
+          <End Type="Self.Order" Multiplicity="1" Role="Order" />
+          <End Type="Self.Order_List" Multiplicity="*" Role="Order_List" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id_order" />
@@ -141,8 +141,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_List_Service">
-          <End Role="Service" Type="Self.Service" Multiplicity="1" />
-          <End Role="Order_List" Type="Self.Order_List" Multiplicity="*" />
+          <End Type="Self.Service" Multiplicity="1" Role="Service" />
+          <End Type="Self.Order_List" Multiplicity="*" Role="Order_List" />
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="Id_service" />
@@ -153,8 +153,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Order_Status">
-          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="1" />
-          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <End Type="Self.Order_Status" Multiplicity="1" Role="Order_Status" />
+          <End Type="Self.Order" Multiplicity="*" Role="Order" />
           <ReferentialConstraint>
             <Principal Role="Order_Status">
               <PropertyRef Name="Id_status" />
@@ -165,8 +165,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Service_Material">
-          <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
-          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <End Type="Self.Material" Multiplicity="0..1" Role="Material" />
+          <End Type="Self.Service" Multiplicity="*" Role="Service" />
           <ReferentialConstraint>
             <Principal Role="Material">
               <PropertyRef Name="Id_material" />
@@ -187,32 +187,32 @@
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
-            <End Role="Position" EntitySet="Position" />
-            <End Role="Employee" EntitySet="Employee" />
+            <End EntitySet="Position" Role="Position" />
+            <End EntitySet="Employee" Role="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Order" EntitySet="Order" />
+            <End EntitySet="Client" Role="Client" />
+            <End EntitySet="Order" Role="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
-            <End Role="Employee" EntitySet="Employee" />
-            <End Role="Order" EntitySet="Order" />
+            <End EntitySet="Employee" Role="Employee" />
+            <End EntitySet="Order" Role="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_List_Order" Association="Self.FK_Order_List_Order">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="Order_List" EntitySet="Order_List" />
+            <End EntitySet="Order" Role="Order" />
+            <End EntitySet="Order_List" Role="Order_List" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_List_Service" Association="Self.FK_Order_List_Service">
-            <End Role="Service" EntitySet="Service" />
-            <End Role="Order_List" EntitySet="Order_List" />
+            <End EntitySet="Service" Role="Service" />
+            <End EntitySet="Order_List" Role="Order_List" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Order_Status" Association="Self.FK_Order_Order_Status">
-            <End Role="Order_Status" EntitySet="Order_Status" />
-            <End Role="Order" EntitySet="Order" />
+            <End EntitySet="Order_Status" Role="Order_Status" />
+            <End EntitySet="Order" Role="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_Service_Material" Association="Self.FK_Service_Material">
-            <End Role="Material" EntitySet="Material" />
-            <End Role="Service" EntitySet="Service" />
+            <End EntitySet="Material" Role="Material" />
+            <End EntitySet="Service" Role="Service" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -489,7 +489,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PhotoModelStoreContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping CdmEntityContainer="Entities" StorageEntityContainer="PhotoModelStoreContainer">
     <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="IsTypeOf(PhotoModel.Client)">
         <MappingFragment StoreEntitySet="Client">

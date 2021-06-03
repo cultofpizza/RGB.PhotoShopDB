@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns:local="clr-namespace:PhotoShopDB"
         mc:Ignorable="d"
         Title="RGB Captcha"
@@ -18,11 +20,15 @@
                        HorizontalAlignment="Center"/>
             <Image x:Name="bitmapCaptcha"
                    Margin="10" Height="150" />
+            
             <TextBox x:Name="CaptchaBox"
                      Margin="7.5"
                      Padding="7.5"
                      KeyDown="CaptchaBox_KeyDown"
-                     TextChanged="CaptchaBox_TextChanged"/>
+                     TextChanged="CaptchaBox_TextChanged"
+                     materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                     CharacterCasing="Upper" TabIndex="-1"/>
+
             <Button x:Name="Click"
                     Content="Refresh"
                     Margin="7.5"
@@ -31,6 +37,7 @@
                     Foreground="#000"
                     Background="#FFF"
                     BorderBrush="#AAA"/>
+                    <!--Никита дурак-->
         </StackPanel>
     </Grid>
 </Window>

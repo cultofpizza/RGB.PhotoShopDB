@@ -26,6 +26,7 @@ namespace PhotoShopDB
         public CaptchaWindow(Action action)
         {
             InitializeComponent();
+            CaptchaBox.Focus();
             actionMode = true;
             openAction = action;
             captcha.Generate();
@@ -35,6 +36,7 @@ namespace PhotoShopDB
         public CaptchaWindow(Func<bool?> func)
         {
             InitializeComponent();
+            CaptchaBox.Focus();
             actionMode = false;
             openFunc = func;
             captcha.Generate();

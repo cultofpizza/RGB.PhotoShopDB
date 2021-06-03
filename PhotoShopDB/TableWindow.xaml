@@ -3,15 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns:local="clr-namespace:PhotoShopDB"
         mc:Ignorable="d"
         Title="Clients"
-        Height="540" Width="700"
+        Height="688" Width="876"
         MinHeight="540" MinWidth="630"
         Background="#FFF"
         WindowStartupLocation="CenterScreen"
         Icon="Images/LogoWhite8.png">
-
+    
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1, 0" EndPoint="0.9, 1">
@@ -41,16 +43,16 @@
                   Background="#FFF"
                   MinWidth="600"
                   MinHeight="360">
-                <ListView x:Name="Clients" Background="#FFF" Grid.Column="1" Grid.Row="1"
+                <ListView x:Name="Clients" Background="#FFF" Grid.Column="1" Grid.Row="1" materialDesign:ThemeAssist.Theme="Light"
                   MinWidth="600"
                   MinHeight="360">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Id_client}"/>
-                            <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding Lname}"/>
-                            <GridViewColumn Header="Имя" Width="100"  DisplayMemberBinding="{Binding Fname}"/>
-                            <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Mname}"/>
-                            <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone_number}"/>
+                            <GridViewColumn Header="Фамилия" Width="120" DisplayMemberBinding="{Binding Lname}"/>
+                            <GridViewColumn Header="Имя" Width="120"  DisplayMemberBinding="{Binding Fname}"/>
+                            <GridViewColumn Header="Отчество" Width="120" DisplayMemberBinding="{Binding Mname}"/>
+                            <GridViewColumn Header="Телефон" Width="120" DisplayMemberBinding="{Binding Phone_number}"/>
                             <GridViewColumn Header="Почта" Width="140" DisplayMemberBinding="{Binding Email}"/>
                         </GridView>
                     </ListView.View>

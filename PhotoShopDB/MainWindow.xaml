@@ -52,7 +52,9 @@
                                  Foreground="White"
                                  BorderBrush="White"
                                  CaretBrush="#FA9746"
-                                 SelectionBrush="#FA9746" />
+                                 SelectionBrush="#FA9746" 
+                                 materialDesign:TextFieldAssist.UnderlineBrush="White"
+                                 />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10">
                         <materialDesign:PackIcon
@@ -70,7 +72,8 @@
                                      BorderBrush="White"
                                      CaretBrush="#FA9746"
                                      SelectionBrush="#FA9746"
-                                     KeyDown="Password_KeyDown"/>
+                                     KeyDown="Password_KeyDown"
+                                     materialDesign:TextFieldAssist.UnderlineBrush="White"/>
                     </StackPanel>
                     <StackPanel Margin="10" HorizontalAlignment="Center">
                         <Button x:Name="btnLogin"
